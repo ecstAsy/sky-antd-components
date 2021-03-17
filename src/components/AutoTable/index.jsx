@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Table, Checkbox } from 'antd';
+import { Table } from 'antd';
 
 /**
 |--------------------------------------------------
