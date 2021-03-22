@@ -15,10 +15,11 @@ const FormItem = Form.Item;
 const FormSpanValue = ({
   label,
   value,
+  formLayout,
   colProps
 }) => (
   <Col {...colProps}>
-    <FormItem label={label}>
+    <FormItem {...formLayout} label={label}>
       {value}
     </FormItem>
   </Col>
@@ -31,13 +32,25 @@ FormSpanValue.defaultProps = {
     md: 24,
     sm: 24,
     xs: 24,
-  }
+  },
+  formLayout: {
+    labelCol: { span: 4 },
+    wrapperCol: { span: 18 },
+  },
 }
 
 FormSpanValue.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
-  colProps: PropTypes.object
+  colProps: PropTypes.object,
+  formLayout: PropTypes.exact({
+    labelCol: PropTypes.shape({
+      span: PropTypes.number
+    }),
+    wrapperCol: PropTypes.shape({
+      span: PropTypes.number
+    })
+  }),
 }
 
 export default FormSpanValue
