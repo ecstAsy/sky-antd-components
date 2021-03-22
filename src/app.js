@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import { AutoButton, AutoInputNumber } from './components';
+import { FormSpanValue, AutoInputNumber } from './components';
 
 function App() {
   return (
-
-    <AutoInputNumber label="新按钮" />
-
+    <Fragment>
+      <AutoInputNumber label="新按钮" />
+      <FormSpanValue label='ss' value='23' colProps={['ss']} />
+    </Fragment>
   )
 }
 

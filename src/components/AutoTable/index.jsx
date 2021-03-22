@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Table } from 'antd';
 
 /**
@@ -22,7 +23,6 @@ const AutoTable = ({
 }) => {
   const { pageInfo, list } = data;
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-
 
   const handleRowSelectChange = (selectedRowKey, selectedRows) => {
     if (onSelectRow) {
@@ -55,6 +55,24 @@ const AutoTable = ({
       {...rest}
     />
   )
+}
+
+AutoTable.defaultProps = {
+  pagination: false,
+  bordered: false,
+  showRowSelection: false,
+  data: {}
+}
+
+AutoTable.propTypes = {
+  title: PropTypes.string,
+  rowKey: PropTypes.string,
+  pagination: PropTypes.bool,
+  bordered: PropTypes.bool,
+  showRowSelection: PropTypes.bool,
+  data: PropTypes.object,
+  onSelectRow: PropTypes.function,
+  onChange: PropTypes.function,
 }
 
 export default AutoTable

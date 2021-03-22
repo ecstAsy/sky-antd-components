@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Form, Select } from 'antd';
 
 /**
@@ -67,6 +68,40 @@ const AutoSelect = ({
       </Select>
     </FormItem>
   )
+}
+
+AutoSelect.defaultProps = {
+  width: '100%',
+  keyName: 'code',
+  valueName: 'name',
+  VIndex: '',
+  disabled: false,
+  formLayout: {
+    labelCol: { span: 4 },
+    wrapperCol: { span: 18 },
+  },
+}
+
+AutoSelect.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string,
+  dataArray: PropTypes.array,
+  width: PropTypes.string,
+  keyName: PropTypes.string,
+  valueName: PropTypes.string,
+  VIndex: PropTypes.string,
+  disabled: PropTypes.bool,
+  rules: PropTypes.bool,
+  formLayout: PropTypes.exact({
+    labelCol: PropTypes.shape({
+      span: PropTypes.number
+    }),
+    wrapperCol: PropTypes.shape({
+      span: PropTypes.number
+    })
+  }),
+  mode: PropTypes.bool,
+  noStyle: PropTypes.bool
 }
 
 export default AutoSelect

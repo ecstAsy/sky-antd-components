@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Form, InputNumber } from 'antd';
 import './index.less';
 
@@ -46,6 +47,39 @@ const AutoInputNumber = ({
       />
     </FormItem>
   )
+}
+
+AutoInputNumber.defaultProps = {
+  label: '',
+  width: '50%',
+  unit: 'price',
+  formLayout: {
+    labelCol: { span: 4 },
+    wrapperCol: { span: 18 },
+  },
+  disabled: false,
+  min: 0,
+  max: 100000
+}
+
+AutoInputNumber.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string,
+  width: PropTypes.string,
+  unit: PropTypes.string,
+  rules: PropTypes.bool,
+  formLayout: PropTypes.exact({
+    labelCol: PropTypes.shape({
+      span: PropTypes.number
+    }),
+    wrapperCol: PropTypes.shape({
+      span: PropTypes.number
+    })
+  }),
+  disabled: PropTypes.bool,
+  noStyle: PropTypes.bool,
+  min: PropTypes.number,
+  max: PropTypes.number
 }
 
 export default AutoInputNumber
