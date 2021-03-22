@@ -4,5 +4,6 @@ CODE_OF_CONDUCT.md
 node_modules
 .gitignore
 webpack.config.js
+webpack.config.dev.js
 yarn.lock
 .eslintrc
