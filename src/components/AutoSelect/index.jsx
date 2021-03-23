@@ -84,7 +84,7 @@ AutoSelect.defaultProps = {
 
 AutoSelect.propTypes = {
   label: PropTypes.string,
-  name: PropTypes.oneOfType(PropTypes.string, PropTypes.array),
+  name: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   dataArray: PropTypes.array,
   width: PropTypes.string,
   keyName: PropTypes.string,
