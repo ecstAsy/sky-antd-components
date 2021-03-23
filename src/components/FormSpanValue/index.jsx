@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Col, Form } from 'antd';
+import { Form } from 'antd';
 
 /**
 |--------------------------------------------------
@@ -15,24 +15,14 @@ const FormItem = Form.Item;
 const FormSpanValue = ({
   label,
   value,
-  formLayout,
-  colProps
+  formLayout
 }) => (
-  <Col {...colProps}>
-    <FormItem {...formLayout} label={label}>
-      {value}
-    </FormItem>
-  </Col>
+  <FormItem {...formLayout} label={label}>
+    {value}
+  </FormItem>
 )
 
 FormSpanValue.defaultProps = {
-  colProps: {
-    xl: 8,
-    lg: 24,
-    md: 24,
-    sm: 24,
-    xs: 24,
-  },
   formLayout: {
     labelCol: { span: 4 },
     wrapperCol: { span: 18 },
@@ -42,7 +32,6 @@ FormSpanValue.defaultProps = {
 FormSpanValue.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
-  colProps: PropTypes.object,
   formLayout: PropTypes.exact({
     labelCol: PropTypes.shape({
       span: PropTypes.number
