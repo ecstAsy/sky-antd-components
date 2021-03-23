@@ -64,7 +64,7 @@ AutoInputNumber.defaultProps = {
 
 AutoInputNumber.propTypes = {
   label: PropTypes.string,
-  name: PropTypes.string,
+  name: PropTypes.oneOfType(PropTypes.string, PropTypes.array),
   width: PropTypes.string,
   unit: PropTypes.string,
   rules: PropTypes.bool,
