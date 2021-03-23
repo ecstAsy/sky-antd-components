@@ -71,8 +71,8 @@ AutoTable.propTypes = {
   bordered: PropTypes.bool,
   showRowSelection: PropTypes.bool,
   data: PropTypes.object,
-  onSelectRow: PropTypes.function,
-  onChange: PropTypes.function,
+  onSelectRow: PropTypes.func,
+  onChange: PropTypes.func,
 }
 
 export default AutoTable
