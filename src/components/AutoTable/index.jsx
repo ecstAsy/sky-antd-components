@@ -45,7 +45,7 @@ const AutoTable = ({
   const isRowSelection = showRowSelection ? { rowSelection } : ''
 
   return (
-    <ConfigProvider locale='zhCN'>
+    <ConfigProvider locale={zhCN}>
       <Table
         title={title}
         rowKey={rowKey || 'id'}
