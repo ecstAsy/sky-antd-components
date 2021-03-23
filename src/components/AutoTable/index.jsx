@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Table } from 'antd';
+import zhCN from 'antd/es/locale/zh_CN';
+import { ConfigProvider, Table } from 'antd';
 
 /**
 |--------------------------------------------------
@@ -44,16 +45,18 @@ const AutoTable = ({
   const isRowSelection = showRowSelection ? { rowSelection } : ''
 
   return (
-    <Table
-      title={title}
-      rowKey={rowKey || 'id'}
-      {...isRowSelection}
-      pagination={!pagination ? pagination : Pagination}
-      dataSource={list}
-      bordered={bordered}
-      onChange={onChange}
-      {...rest}
-    />
+    <ConfigProvider locale='zhCN'>
+      <Table
+        title={title}
+        rowKey={rowKey || 'id'}
+        {...isRowSelection}
+        pagination={!pagination ? pagination : Pagination}
+        dataSource={list}
+        bordered={bordered}
+        onChange={onChange}
+        {...rest}
+      />
+    </ConfigProvider>
   )
 }
 
